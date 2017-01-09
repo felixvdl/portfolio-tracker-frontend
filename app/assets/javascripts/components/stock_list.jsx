@@ -23,7 +23,7 @@ var that = this
           portfolioPnl: data["portfolio_pnl"],
         })
       })
-      this.newData = setInterval(this.getData, 3000)
+      this.newData = setInterval(this.getData, 2500)
   }
 
   getData(){
