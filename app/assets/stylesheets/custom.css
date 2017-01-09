@@ -9,3 +9,13 @@
   margin-left: 40%;
   width: 600px;
 }
+
+#portfolio-pnl{
+  margin-left: 40%;
+  width: 300px;
+}
+
+.profile-report{
+  margin-top: 20px;
+  border: 3px solid black;
+}
