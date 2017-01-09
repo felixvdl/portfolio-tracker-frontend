@@ -16,8 +16,41 @@
 }
 
 .profile-report{
-  margin-top: 20px;
-  border: 3px solid black;
+  margin-top: 60px;
+  float: left;
+  margin-left: 60px;
+}
+
+tr {
+  border-bottom:1pt solid #A0A0A0 ;
+}
+
+th {
+  padding: 10px;
+  width: auto;
+  background-color: #E0E0E0;
+}
+td {
+  width: 75%;
+  padding: 10px;
+  background-color: #F8F8F8;
+}
+
+.report-header {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.stock-chart {
+  margin-top: 60px;
+  float: right;
+  margin-right: 60px;
+  border: 2px solid blue;
+  height: 450px;
+  width: 40%
+}
+#stuff {
+  text-align: center;
 }
 
 #position-type{
