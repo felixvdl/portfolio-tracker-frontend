@@ -9,9 +9,8 @@ class StockList extends React.Component{
     }
     this.getData = this.getData.bind(this)
   }
-
   componentDidMount(){
-var that = this
+    var that = this
     $.ajax({
         url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio',
         dataType: "json",
