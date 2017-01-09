@@ -14,7 +14,7 @@ class Report extends React.Component {
       <div>
       <h1 className="report-header">Stock Report Details</h1>
       <table className ="profile-report">
-        <tbody className ="profile-report">
+        <tbody>
           <tr>
             <th className="header"> 52 Week High</th>
             <td> STOCK_HIGH</td>
@@ -61,6 +61,9 @@ class Report extends React.Component {
           </tr>
         </tbody>
     </table>
+      <div className="stock-chart">
+        <p id="stuff">STOCK CHART HERE 😈</p>
+      </div>
     </div>
     )
   }
