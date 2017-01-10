@@ -103,10 +103,6 @@ class Report extends React.Component {
             <th className="header"> Estimated EPS: </th>
             <td> {this.state.estimated_eps}</td>
           </tr>
-          <tr>
-            <th className="header"> P/E Ratio </th>
-            <td> PE_RATIO</td>
-          </tr>
         </tbody>
     </table>
       <div className="stock-chart">
