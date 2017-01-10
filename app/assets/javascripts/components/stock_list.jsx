@@ -6,6 +6,8 @@ class StockList extends React.Component{
       user: "",
       portfolioStocks: [],
       pnl: "",
+      portfolioCostBase: "",
+      portfolioTotalVal:""
     }
     this.getData = this.getData.bind(this)
   }
@@ -20,9 +22,11 @@ class StockList extends React.Component{
           portfolioStocks: data["stocks"],
           pnl: data["portfolio_pnl"],
           portfolioPnl: data["portfolio_pnl"],
+          portfolioCostBase: data["portfolio_cost_basis"],
+          portfolioTotalVal: data["portfolio_total_value"]
         })
       })
-      this.newData = setInterval(this.getData, 3000)
+      this.newData = setInterval(this.getData, 10000)
   }
 
   getData(){
@@ -38,6 +42,8 @@ class StockList extends React.Component{
               portfolioStocks: data["stocks"],
               pnl: data["portfolio_pnl"],
               portfolioPnl: data["portfolio_pnl"],
+              portfolioCostBase: data["portfolio_cost_basis"],
+              portfolioTotalVal: data["portfolio_total_value"]
             })
           })
   }
@@ -49,6 +55,21 @@ class StockList extends React.Component{
             <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h2 className="sub-header">{this.state.user} Portfolio:</h2>
             <h2 id="portfolio-pnl"> P&L: {this.state.portfolioPnl}</h2>
+            <div className="table-div">
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th>Portfolio:</th>
+                  <th>Amount of Shares:</th>
+                  <th>Original Position Value:</th>
+                  <th>Current Position Value:</th>
+                  <th>P&L:</th>
+                  <th>%</th>
+                </tr>
+              </thead>
+                <Portfolio portfolio={this.state} />
+            </table>
+          </div>
               <div className="table-div">
               <table className="table table-striped">
                 <thead>
@@ -61,6 +82,7 @@ class StockList extends React.Component{
                     <th>Original Position Value:</th>
                     <th>Current Position Value:</th>
                     <th>P&L:</th>
+                    <th>%</th>
                   </tr>
                 </thead>
                   {this.state.portfolioStocks.map((stock, i) =>
@@ -71,7 +93,9 @@ class StockList extends React.Component{
           </div>
         </div>
       </div>
+      <Charts />
     </div>
+
     )
   }
 }
