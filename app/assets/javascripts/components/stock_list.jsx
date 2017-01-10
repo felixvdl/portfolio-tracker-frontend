@@ -30,13 +30,11 @@ class StockList extends React.Component{
   }
 
   getData(){
-    console.log("request sent")
     var that = this
         $.ajax({
             url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio',
             dataType: "json",
           }).done(function(data){
-                console.log("request recieved")
             that.setState({
               user: data["name"],
               portfolioStocks: data["stocks"],

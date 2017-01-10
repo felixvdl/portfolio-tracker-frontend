@@ -104,10 +104,7 @@ class Report extends React.Component {
           </tr>
         </tbody>
     </table>
-      <div className="stock-chart">
-        <p id="stuff">STOCK CHART HERE 😈</p>
-      </div>
-    </div>
+  </div>
     )
   }
 }
