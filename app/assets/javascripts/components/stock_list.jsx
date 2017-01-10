@@ -49,51 +49,58 @@ class StockList extends React.Component{
   }
   render(){
     return(
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-3 col-md-2 sidebar">
-            <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 className="sub-header">{this.state.user} Portfolio:</h2>
-            <h2 id="portfolio-pnl"> P&L: {this.state.portfolioPnl}</h2>
-            <div className="table-div">
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Portfolio:</th>
-                  <th>Amount of Shares:</th>
-                  <th>Original Position Value:</th>
-                  <th>Current Position Value:</th>
-                  <th>P&L:</th>
-                  <th>%</th>
-                </tr>
-              </thead>
-                <Portfolio portfolio={this.state} />
-            </table>
-          </div>
+      <div>
+      <br/><br/><br/>
+      <div className="col-sm-offset-1 col-md-8">
+        <Charts />
+      </div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <div className="container-fluid">
+          <div className="row">
+
+            <div className="col-sm-3 col-md-2 sidebar">
+              <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+              <h2 className="sub-header">{this.state.user} Portfolio:</h2>
+              <h2 id="portfolio-pnl"> P&L: {this.state.portfolioPnl}</h2>
               <div className="table-div">
               <table className="table table-striped">
                 <thead>
                   <tr>
-                    <th>Company:</th>
-                    <th>Stock Symbol:</th>
-                    <th>Shares Owned:</th>
-                    <th>Avg. Purchase Price:</th>
-                    <th>Current Price:</th>
+                    <th>Portfolio:</th>
+                    <th>Amount of Shares:</th>
                     <th>Original Position Value:</th>
                     <th>Current Position Value:</th>
                     <th>P&L:</th>
                     <th>%</th>
                   </tr>
                 </thead>
-                  {this.state.portfolioStocks.map((stock, i) =>
-                    <Stock stocks={stock} key={i}/>
-                  )}
+                  <Portfolio portfolio={this.state} />
               </table>
+            </div>
+                <div className="table-div">
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Company:</th>
+                      <th>Stock Symbol:</th>
+                      <th>Shares Owned:</th>
+                      <th>Avg. Purchase Price:</th>
+                      <th>Current Price:</th>
+                      <th>Original Position Value:</th>
+                      <th>Current Position Value:</th>
+                      <th>P&L:</th>
+                      <th>%</th>
+                    </tr>
+                  </thead>
+                    {this.state.portfolioStocks.map((stock, i) =>
+                      <Stock stocks={stock} key={i}/>
+                    )}
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <Charts />
     </div>
 
     )
