@@ -2,31 +2,41 @@ class Pie extends React.Component{
 
 
   componentDidMount(){
+    let tickers = []
+    let current_values = []
+    let rainbow = [
+    "#fbb735", "#e98931", "#eb403b", "#b32E37", "#6c2a6a",
+    "#5c4399", "#274389", "#1f5ea8", "#227FB0", "#2ab0c5",
+    "#39c0b3"]
 
-    const data = {
-      labels: [
-      "Oil",
-      "Healthcare",
-      "Customer"
-      ],
+    $.ajax({
+        url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio',
+        dataType: "json",
+        async: false
+      })
+    .done(function(response){
 
-      datasets: [
-      {
-        data: [40000,5700,12490],
-        backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-        ],
-        hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-        ]
+      let stock_info = response.stocks
+      stock_info.forEach(function(stock){
+        tickers = tickers.concat(stock.ticker)
+        current_values = current_values.concat(stock.current_value)
 
-      }]
-    };
+    })
 
+    })
+
+
+  const data = {
+
+    labels: tickers,
+
+    datasets: [
+        {
+            data: current_values,
+            backgroundColor: rainbow,
+            hoverBackgroundColor: rainbow
+        }]
+  };
 
 
    let ctx = document.getElementById("myPieChart").getContext("2d");
@@ -36,9 +46,9 @@ class Pie extends React.Component{
      data: data
    });
 
+
+
   }
-
-
 
   render(){
     return(
