@@ -53,6 +53,7 @@ GEM
     byebug (9.0.6)
     chart-js-rails (0.1.1)
       railties (> 3.1)
+      pie-chart
     chartkick (2.2.2)
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
@@ -184,7 +185,6 @@ DEPENDENCIES
   byebug
   chart-js-rails
   chartkick
-  devise_token_auth
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
