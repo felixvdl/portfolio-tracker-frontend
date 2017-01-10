@@ -26,7 +26,7 @@ class StockList extends React.Component{
           portfolioTotalVal: data["portfolio_total_value"]
         })
       })
-      this.newData = setInterval(this.getData, 3000)
+      this.newData = setInterval(this.getData, 10000)
   }
 
   getData(){
