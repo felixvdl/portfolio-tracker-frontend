@@ -50,6 +50,8 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
+    chart-js-rails (0.1.1)
+      railties (> 3.1)
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
     connection_pool (2.2.1)
@@ -164,6 +166,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
+  chart-js-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
