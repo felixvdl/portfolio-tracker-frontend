@@ -1,5 +1,12 @@
 class MonthlyLine extends React.Component {
   componentDidMount(){
+    // ajax request to get data
+    $.ajax({
+      url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio/history',
+      dataType: "json",
+    }).done(function(data){
+    })
+
     let month = [];
     for (var i = 0; i < 31; i++) {
       datum = new Date(Date.now() - (i * 86400000)),

@@ -25,7 +25,6 @@ class Report extends React.Component {
    url: 'https://portfolio-tracker-backend.herokuapp.com/stocks/1',
    dataType: "json",
  }).done(function(data){
-   debugger
    that.setState({
      bid: data["bid"],
      ask: data["ask"],
@@ -105,10 +104,7 @@ class Report extends React.Component {
           </tr>
         </tbody>
     </table>
-      <div className="stock-chart">
-        <p id="stuff">STOCK CHART HERE 😈</p>
-      </div>
-    </div>
+  </div>
     )
   }
 }
