@@ -184,6 +184,7 @@ DEPENDENCIES
   byebug
   chart-js-rails
   chartkick
+  devise_token_auth
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
