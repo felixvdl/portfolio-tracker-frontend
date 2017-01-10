@@ -5,8 +5,8 @@ class Pie extends React.Component{
     let tickers = []
     let current_values = []
     let rainbow = [
-    "#fbb735", "#e98931", "#eb403b", "#b32E37", "#6c2a6a",
-    "#5c4399", "#274389", "#1f5ea8", "#227FB0", "#2ab0c5",
+    "#fbb735", "#e98931", "#1f5ea8", "#b32E37", "#6c2a6a",
+    "#5c4399", "#274389", "#eb403b", "#227FB0", "#2ab0c5",
     "#39c0b3"]
 
     $.ajax({
@@ -43,7 +43,8 @@ class Pie extends React.Component{
 
    let myPieChart = new Chart(ctx, {
      type: 'pie',
-     data: data
+     data: data,
+
    });
 
 
