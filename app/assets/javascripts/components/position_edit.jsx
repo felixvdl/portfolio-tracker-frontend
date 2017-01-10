@@ -3,7 +3,7 @@ class PositionEdit extends React.Component{
     return(
       <div>
         <h3> Make a Trade: </h3>
-        <form action="https://portfolio-tracker-backend.herokuapp.com/users/1/stocks/1" method="post">
+        <form action="https://portfolio-tracker-backend.herokuapp.com/users/1/stocks/12" method="post">
           <select id="position-type">
             <option value="buy" >Buy</option>
             <option value="sell" >Sell</option>

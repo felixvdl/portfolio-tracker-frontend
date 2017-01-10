@@ -22,7 +22,7 @@ class StockList extends React.Component{
           portfolioPnl: data["portfolio_pnl"],
         })
       })
-      this.newData = setInterval(this.getData, 10000)
+      this.newData = setInterval(this.getData, 2500)
   }
 
   getData(){
