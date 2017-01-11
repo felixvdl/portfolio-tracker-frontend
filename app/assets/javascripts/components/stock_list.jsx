@@ -7,7 +7,8 @@ class StockList extends React.Component{
       portfolioStocks: [],
       pnl: "",
       portfolioCostBase: "",
-      portfolioTotalVal:""
+      portfolioTotalVal:"",
+
     }
     this.getData = this.getData.bind(this)
   }
@@ -23,7 +24,8 @@ class StockList extends React.Component{
           pnl: data["portfolio_pnl"],
           portfolioPnl: data["portfolio_pnl"],
           portfolioCostBase: data["portfolio_cost_basis"],
-          portfolioTotalVal: data["portfolio_total_value"]
+          portfolioTotalVal: data["portfolio_total_value"],
+
         })
       })
       this.newData = setInterval(this.getData, 2500)
