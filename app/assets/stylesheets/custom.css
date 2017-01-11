@@ -41,14 +41,7 @@ td {
   text-align: center;
 }
 
-.stock-chart {
-  margin-top: 60px;
-  float: right;
-  margin-right: 60px;
-  border: 2px solid blue;
-  height: 425px;
-  width: 70%
-}
+
 #stuff {
   text-align: center;
 }

@@ -54,11 +54,6 @@ class StockList extends React.Component{
   render(){
     return(
       <div>
-      <br/><br/><br/>
-      <div className="col-sm-offset-1 col-md-8">
-        <Charts />
-      </div>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div className="container-fluid">
           <div className="row">
 
