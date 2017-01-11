@@ -28,7 +28,7 @@ class Report extends React.Component {
    that.setState({
      bid: data["bid"],
      ask: data["ask"],
-     company_name: data["name"],
+     company_name: data["companyname"],
      bid_realtime: data["bid_realtime"],
      ask_realtime: data["ask_realtime"],
      change_realtime: data["change_realtime"],
