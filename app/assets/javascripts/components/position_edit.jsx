@@ -19,7 +19,10 @@ class PositionEdit extends React.Component{
         symbol: data.history[0].symbol
       })
     })
-
+    .fail(function(error){
+      debugger
+      console.log(error)
+    })
   }
   handleSubmit(e){
     e.preventDefault()
