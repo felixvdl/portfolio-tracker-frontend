@@ -9,12 +9,12 @@ class Stock extends React.Component{
       textColor = "text-success"
       triangle = "glyphicon glyphicon-triangle-top"
     }
-     let{company_name, ticker, original_price, current_price, original_value, shares_owned, current_value,current_pnl} = this.props.stocks
+     let{company_name, ticker, original_price, current_price, original_value, shares_owned, current_value,current_pnl,stock_id} = this.props.stocks
     return(
 
       <tbody>
         <tr>
-          <td><a href="#">{company_name}</a></td>
+          <td><a href={`/stocks/${stock_id}`}>{company_name}</a></td>
           <td>{ticker}</td>
           <td>{shares_owned}</td>
           <td>{original_price}</td>
