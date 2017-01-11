@@ -6,7 +6,6 @@ class Register extends React.Component {
     let email = this.refs.email.value
     let first_name = this.refs.first.value
     let last_name = this.refs.last.value
-
     $.ajax({
       url: "https://portfolio-tracker-backend.herokuapp.com/users",
       method: "post",
@@ -19,7 +18,10 @@ class Register extends React.Component {
       }
     })
     .done(function(response){
-      console.log(response)
+      localStorage.setItem("user_token", response.authentication_token)
+      localStorage.setItem("user_id", response.id)
+      debugger
+      window.location.href = "/";
     })
   }
   render() {
