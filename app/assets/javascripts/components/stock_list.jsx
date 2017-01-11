@@ -13,10 +13,12 @@ class StockList extends React.Component{
     this.getData = this.getData.bind(this)
   }
   componentDidMount(){
+    let user_id = localStorage.getItem("user_id")
     var that = this
     $.ajax({
-        url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio',
+        url: 'https://portfolio-tracker-backend.herokuapp.com/users/'+user_id+'/portfolio',
         dataType: "json",
+        data: {authentication_token: localStorage.getItem("user_token")}
       }).done(function(data){
         that.setState({
           user: data["name"],
@@ -32,10 +34,12 @@ class StockList extends React.Component{
   }
 
   getData(){
-    var that = this
+        let user_id = localStorage.getItem("user_id")
+        var that = this
         $.ajax({
-            url: 'https://portfolio-tracker-backend.herokuapp.com/users/1/portfolio',
+            url: 'https://portfolio-tracker-backend.herokuapp.com/users/'+user_id+'/portfolio',
             dataType: "json",
+            data: {authentication_token: localStorage.getItem("user_token")}
           }).done(function(data){
             that.setState({
               user: data["name"],

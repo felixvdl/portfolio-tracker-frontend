@@ -2,28 +2,19 @@ class PositionEdit extends React.Component{
   constructor(){
     super()
     this.state = {
-      symbol: "",
-      user_id: 1,
-      stock_id: 1,
+      user_id: "",
+      stock_id: "",
       amount: ""
     }
 
   }
   componentDidMount(){
-    var that = this
-    $.ajax({
-      url: 'https://portfolio-tracker-backend.herokuapp.com/stocks/1/',
-      dataType: "json",
-    }).done(function(data){
-      that.setState({
-        symbol: data.history[0].symbol
+      this.setState({
+        user_id: parseInt(localStorage.getItem("user_id")),
+        stock_id: parseInt(window.location.pathname.slice(-1)),
       })
-    })
-    .fail(function(error){
-      debugger
-      console.log(error)
-    })
   }
+
   handleSubmit(e){
     e.preventDefault()
     this.setState({
@@ -33,7 +24,9 @@ class PositionEdit extends React.Component{
       this.ajax()
     }.bind(this), 50)
   }
+
   ajax(){
+    debugger
     $.ajax({
       url: "https://portfolio-tracker-backend.herokuapp.com/users/"+this.state.user_id+"/stocks/"+this.state.stock_id,
       method: "post",
@@ -43,8 +36,8 @@ class PositionEdit extends React.Component{
       }
     })
     .done(function(response){
-      console.log(response)
-      this.refs.stockAmount.value = ""
+      alert(response.message)
+      window.location.href = "/";
     })
   }
   render(){
